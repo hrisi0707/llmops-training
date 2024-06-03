@@ -1,0 +1,49 @@
+minikube status
+
+minikube start --driver docker --container-runtime docker --gpus all
+
+kubectl describe nodes
+
+docker pull ollama/ollama
+
+sudo lsof -i :11434
+
+sudo kill -9 <PID>
+
+docker run -d --gpus=all -v ollama:/root/.ollama -p 11434:11434 --name ollama_new ollama/ollama
+
+docker ps
+
+docker cp <source location> <conatinerid>:/tmp/ZscalerRootCertificate.crt
+
+docker exec -it <conatiner id> bash
+
+cp /tmp/ZscalerRootCertificate.crt /usr/local/share/ca-certificates/
+update-ca-certificates
+
+Check ollama processe and stop
+ollama list
+sudo systemctl stop ollama
+
+docker commit <conatiner id> custom_image:tag
+docker tag custom_image:tag <docker hub repo>
+docker login
+Docker push <docker hub repo>
+
+ jupyter nbconvert --to script finetune.ipynb
+ 
+kubectl apply -f ollama_service.yaml -n training
+kubectl -n training port-forward service/ollama 11434:80
+
+sudo yum install nginx
+vim /etc/nginx/nginx.conf
+
+add below lines under server listen 80
+
+location / {
+        proxy_pass http://localhost:11434;
+        proxy_set_header Host localhost:11434;
+    }
+	
+	
+sudo systemctl restart nginx

@@ -1,0 +1,20 @@
+sudo yum install libXcomposite libXcursor libXI libXtst libXrander alsa-lib mesa-libEGL libXdamagemesa-libGL libXScrnSaver
+curl -O https://repo.anaconda.com/archive/Anaconda3-2023.09-0-Linux-x86_64.sh
+
+qUd71uaCIRRRaFkvLJO973uYu3U3Kf.1
+81580836993
+xKgtEsGBhrScMcpQ9aPP
+
+https://us06web.zoom.us/j/81580836993?pwd=qUd71uaCIRRRaFkvLJO973uYu3U3Kf.1
+
+curl -fsSl https://ollama.com/install.sh | sh
+ollama pull llama3:8b
+ollama serve llama3:8b
+
+import requests
+def generate_text(model, prompt):    url = "http://localhost:11434/api/generate"    headers = {"Accept":"application/json","Content-Type":"application/json"}    data = {        "model": model,        "prompt": prompt,        "stream":False    }    response = requests.post(url, json=data,headers=headers)    print (response)    # Check if the request was successful    if response.status_code == 200:        return response.json()    else:        return {"error": f"Request failed with status code {response.status_code}"}# Example usagemodel = "llama3:8b"prompt = "Why is the sky blue?"result = generate_text(model, prompt)print(result)
+
+
+https://fractalai.awsapps.com/start
+
+import giskardimport pandas as pdfrom openai import OpenAIfrom giskard.llm.client.openai import OpenAIClientfrom giskard.llm.client.mistral import MistralClient# Setup the Ollama client with API key and base URL_client = OpenAI(base_url="http://localhost:11434/v1/", api_key="ollama")oc = OpenAIClient(model="llama2:7b", client=_client)giskard.llm.set_default_client(oc)questions = [""list of 5-6 question""]giskard_dataset = giskard.Dataset(pd.DataFrame({"question":questions}),target=None)def model_predict(df: pd.DataFrame):       return [qa_chain.invoke(question)["result"] for question in df["question"]]giskard_model = giskard.Model(    model=model_predict,    model_type="text_generation",    name="Training Q&A bit",    description="Sample bot",    feature_names=["question"])scan_results = giscard.scan(giskard_model,giskard_dataset)

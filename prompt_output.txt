@@ -1,0 +1,26 @@
+{
+  "patient_name": "Sarah Johnson",
+  "doctor_name": "Dr. David Smith",
+  "doctor_credentials": "Credentials not provided",
+  "satisfaction_rating": "Not satisfied",
+  "review_summary": "Disappointing consultation with dismissive demeanor, lack of engagement, rushed and disinterested approach, questionable diagnostic skills, overly technical explanations, felt dismissed, unheard, and utterly dissatisfied.",
+  "tags": [
+    "unsatisfied consultation",
+    "dismissive demeanor",
+    "lack of engagement",
+    "rushed approach",
+    "questionable diagnostic skills",
+    "technical explanations",
+    "feeling dismissed",
+    "feeling unheard"
+  ]
+}
+
+{
+    "patient_name": "Sarah Johnson",
+    "consulting doctor": "Dr. David Smith",
+    "review_rating": 2,
+    "review_description": "Dr. David Smith's consultation was dismissive, rushed, and lacking empathy. His diagnostic skills and communication were subpar, leaving the patient feeling unheard and dissatisfied.",
+    "satisfaction": false,
+    "issue_tags": ["poor bedside manner", "lack of empathy", "rushed consultation", "poor communication", "questionable diagnostics"]
+}
